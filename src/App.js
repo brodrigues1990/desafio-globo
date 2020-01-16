@@ -1,14 +1,12 @@
-import React from 'react';
-import './App.css';
+import React, { Component, Fragment } from 'react';
+import Header from './components/organisms/Header/Header';
 
 function App() {
   return (
     
     <div className="App">
       <Header></Header>
-      <SearchBar></SearchBar>
-      <SimpleList></SimpleList>
-      <Footer></Footer>
+ 
     </div>
 
   );
