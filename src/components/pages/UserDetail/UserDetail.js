@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import Header from '../../organisms/Header/Header';
 import styled from 'styled-components';
-import { Container, Row, Column } from '../../atoms/Grid/Grid';
+import { Container } from '../../atoms/Grid/Grid';
 import Card from '../../atoms/Card/Card';
 
 export default class Home extends React.Component {
@@ -12,10 +12,9 @@ export default class Home extends React.Component {
   render () {
     return (
       <Fragment>
-        <Header headerTitle="Usuario"></Header>
-        <Container>
-            <Card title="Usuario">Usuario</Card>
-        </Container>
+        
+        <Card title="Usuario">Usuario</Card>
+        
       </Fragment>
     );
   }

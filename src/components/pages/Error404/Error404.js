@@ -1,8 +1,17 @@
 import React, { Component, Fragment } from 'react';
-import Header from '../../organisms/Header/Header';
-import styled from 'styled-components';
-import { Container, Row, Column } from '../../atoms/Grid/Grid';
 import Card from '../../atoms/Card/Card';
+import { useLocation } from "react-router-dom";
+
+function NoMatch() {
+  let location = useLocation();
+  return (
+    <div>
+      <h3>
+      Nenhum resultado para <code>{location.pathname}</code>
+      </h3>
+    </div>
+  );
+}
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -12,10 +21,10 @@ export default class Home extends React.Component {
   render () {
     return (
       <Fragment>
-        <Header headerTitle="Error"></Header>
-        <Container>
-            <Card title="Error">Error</Card>
-        </Container>
+
+            <Card title="Error">
+              <NoMatch/>
+            </Card>
       </Fragment>
     );
   }

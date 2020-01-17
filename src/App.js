@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import Home from './components/pages/Home/Home';
 
 function App() {
