@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Container, Row, Column } from '../../atoms/Grid/Grid'
+import { Container, Row, Column } from '../../atoms/Grid/Grid';
+import logo from '../../../assets/Images/logo-github.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const HeaderContainer = styled.header `
     width:100%;
     height: 72px;
     background-color: #465A65;
     color: #FFF;
-    position: fixed;
+	/* position: fixed; */
+	margin-bottom:30px;
     top: 0;
     transform: translateY(-100%);
     transition: transform .3s cubic-bezier(.4,0,.6,1),opacity 0s .3s;
@@ -17,13 +21,30 @@ const HeaderContainer = styled.header `
     transform: translateY(0);
     transition: transform .3s cubic-bezier(.4,0,.2,1) .3s,opacity 0s .3s;
 `
+const Image = styled.img `
+    padding: 10px;
+    height: 70px;
+    background-color: none;
+`
 
 export default class Header extends Component {
   render() {
     return (
-        <HeaderContainer>
-        
-        </HeaderContainer>
+		<HeaderContainer>
+			<Container>
+        <Row>
+        <Column>
+            <Image src={logo} alt="GitHub"/>
+        </Column>
+        {/* <Column>
+           {this.props.headerTitle} 
+        </Column>
+        <Column>
+            <FontAwesomeIcon icon={faSearch} />
+        </Column> */}
+        </Row>
+			</Container>
+		</HeaderContainer>
     );
   }
 }

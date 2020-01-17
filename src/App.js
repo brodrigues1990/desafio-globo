@@ -1,14 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import Header from './components/organisms/Header/Header';
+import Home from './components/pages/Home/Home';
 
 function App() {
   return (
-    
-    <div className="App">
-      <Header></Header>
- 
-    </div>
-
+      <Home></Home>
   );
 }
 
