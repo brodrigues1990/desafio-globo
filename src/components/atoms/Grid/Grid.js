@@ -3,21 +3,12 @@ import styled from 'styled-components';
 
 
 export const Container = styled.div `
+   display: block;
    max-width: 1360px;
    padding-right:20px;
    padding-left: 20px;
-   margin-right:auto;
-   margin-left:auto;
+   margin: 0 auto;
    box-sizing:border-box;
-   &:before,
-   &:after {
-       content: " ";
-       display: table;
-   }
-   &:after{
-       clear: both;
-   }
-
    @media only scren and (min-width: 768px) {
         ${({ mobile }) => mobile && getWidthGrid(mobile)}
    }
@@ -30,18 +21,12 @@ export const Container = styled.div `
 `
 
 export const  Row = styled.div `
+   display: flex;
+   flex-direction: row;
    width:100%;
    height:  auto;
-   float:left;
+   /* float:left; */
    box-sizing:border-box;
-   &:before,
-   &:after {
-       content: " ";
-       display: table;
-   }
-   &:after{
-       clear: both;
-   }
    @media only scren and (min-width: 768px) {
        width: ${props => (props.grid ? props.grid /12 * 100 : '8.33')}%
    }
@@ -54,12 +39,10 @@ function getWidthGrid(value){
 
 }
 export const  Column = styled.div `
-   float:left;
-   padding: .25rem;
+   flex: 1;
    min-height: 1px;
    box-sizing:border-box;
    width:100%;
-
    @media only scren and (min-width: 768px) {
         ${({ mobile }) => mobile && getWidthGrid(mobile)}
    }
