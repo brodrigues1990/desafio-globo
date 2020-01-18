@@ -73,8 +73,8 @@ export default class SimpleList extends Component {
                 {
                     Users.map((user, i) => {
                         return (
-                            <Link to="/user">
-                                <ListItem key={i}>
+                            <Link to="/user" key={i}>
+                                <ListItem >
                                     <ImageContainer>
                                         <ImageUser src={user.avatar_url} alt="user" />
                                     </ImageContainer>
