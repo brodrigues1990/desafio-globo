@@ -3,13 +3,11 @@ import styled from 'styled-components';
 import { Container, Row, Column } from '../../atoms/Grid/Grid';
 import logo from '../../../assets/Images/logo-github.png';
 
-const HeaderContainer = styled.header `
+const HeaderContainer = styled.header`
     width:100%;
     height: 72px;
     background-color: #465A65;
     color: #FFF;
-	/* position: fixed; */
-	/* margin-bottom:30px; */
     top: 0;
     transform: translateY(-100%);
     transition: transform .3s cubic-bezier(.4,0,.6,1),opacity 0s .3s;
@@ -20,7 +18,7 @@ const HeaderContainer = styled.header `
     transition: transform .3s cubic-bezier(.4,0,.2,1) .3s,opacity 0s .3s;
     text-align: center;
 `
-const Image = styled.img `
+const Image = styled.img`
     padding: 10px;
     height: 70px;
     background-color: none;
@@ -29,15 +27,15 @@ const Image = styled.img `
 export default class Header extends Component {
   render() {
     return (
-		<HeaderContainer>
-			<Container>
-        <Row>
-          <Column>
-              <Image src={logo} alt="GitHub"/>
-          </Column>
-        </Row>
-			</Container>
-		</HeaderContainer>
+      <HeaderContainer>
+        <Container>
+          <Row>
+            <Column>
+            <a target="_blank" href="https://github.com/brodrigues1990/desafio-globo"><Image src={logo} alt="GitHub" /></a>
+            </Column>
+          </Row>
+        </Container>
+      </HeaderContainer>
     );
   }
 }
