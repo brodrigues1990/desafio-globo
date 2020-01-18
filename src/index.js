@@ -11,15 +11,37 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
-export const ButttonBack = styled.button `
-    background:none;
-    padding:0;
+export const ContainerButttonBack = styled.section`
+    width:100%;
+    height: 35px;
 `
-function IsHome(){
+export const ButttonBack = styled.button`
+    background: none;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    color: #465A65;
+    height: 35px;
+    cursor: pointer;
+`
+export const TextButtonBack = styled.span`
+    padding-left: 5px;
+`
+
+function ButtonBack() {
     let match = useRouteMatch("/");
-    if(!match.isExact){
-        return <ButttonBack><Link to="/"><FontAwesomeIcon icon={faArrowLeft} />Voltar</Link></ButttonBack>
-    }else{
+    if (!match.isExact) {
+        return (
+            
+            <Link to="/"  >
+                <ButttonBack>
+                        <FontAwesomeIcon icon={faArrowLeft} size="lg"/>  
+                        <TextButtonBack>Voltar</TextButtonBack>
+                </ButttonBack>
+            </Link>
+            
+        )
+    } else {
         return null;
     }
 }
@@ -27,9 +49,9 @@ function IsHome(){
 ReactDOM.render(
     <Fragment>
         <Header></Header>
-        <Container>         
+        <Container>
             <BrowserRouter>
-                <IsHome/>
+            <ContainerButttonBack><ButtonBack /></ContainerButttonBack>
                 <Switch>
                     <Route path="/" exact={true} component={App} />
                     <Route path="/user" component={UserDetail} />
@@ -38,5 +60,5 @@ ReactDOM.render(
             </ BrowserRouter>
         </Container>
     </Fragment>
-    
-, document.getElementById('root'));
+
+    , document.getElementById('root'));
