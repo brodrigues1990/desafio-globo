@@ -12,25 +12,26 @@ const Card = styled.div `
     opacity: 1;
     transform: translateY(0);
     transition: transform .3s cubic-bezier(.4,0,.2,1) .3s,opacity 0s .3s;
-    padding: 30px 20px;
 `
 const CardTitle = styled.h3 `
     display: block;
     line-height: 32px;
-    margin-bottom: 8px;
     font-size: 25px;
     font-weight: 300;
-    color: #465A65;
+    padding: 15px 20px;
+    background: #f5f5f5;
 `
 const CardContent = styled.div `
-    margin: 15px 0 25px 0;
+    margin: 0 0 25px 0;
 `
 
 export default props => (
   
       <Card>
         <CardTitle>{props.title}</CardTitle>
-        <CardContent>{props.children}</CardContent>
+        <CardContent>         
+            {props.children}
+        </CardContent>
       </Card>
     
 )

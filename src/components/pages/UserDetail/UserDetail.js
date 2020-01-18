@@ -13,7 +13,9 @@ export default class Home extends React.Component {
     return (
       <Fragment>
         
-        <Card title="Usuario">Usuario</Card>
+        <Card title="brodrigues1990">
+          Usuario
+        </Card>
         
       </Fragment>
     );

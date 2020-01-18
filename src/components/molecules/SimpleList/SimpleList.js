@@ -25,8 +25,15 @@ const ListItem = styled.li`
     justify-content: flex-start;
     padding: 15px 20px;
     overflow: hidden;
+    border-top: 1px solid #e5e5e5;
     &:hover {
         background: #e1e4e8;
+        -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    }
+    &:active {
+        -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+        box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
     }
 `
 
@@ -62,7 +69,7 @@ const Users = [
 export default class SimpleList extends Component {
     render() {
         return (
-            <ListContainer>
+            <React.Fragment>
                 {
                     Users.map((user, i) => {
                         return (
@@ -81,7 +88,7 @@ export default class SimpleList extends Component {
                 }
 
 
-            </ListContainer>
+            </React.Fragment>
         );
     }
 }

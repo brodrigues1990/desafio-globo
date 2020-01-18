@@ -9,7 +9,7 @@ const HeaderContainer = styled.header `
     background-color: #465A65;
     color: #FFF;
 	/* position: fixed; */
-	margin-bottom:30px;
+	/* margin-bottom:30px; */
     top: 0;
     transform: translateY(-100%);
     transition: transform .3s cubic-bezier(.4,0,.6,1),opacity 0s .3s;
