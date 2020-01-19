@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import Card from '../../atoms/Card/Card';
+import Card from '../../molecules/Card/Card';
 import SimpleList from '../../molecules/SimpleList/SimpleList';
 import Search from '../../molecules/Search/Search';
 import { api } from '../../../services/githubAPI';
