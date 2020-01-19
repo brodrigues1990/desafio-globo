@@ -43,8 +43,8 @@ class Search extends React.Component {
         let { history } = this.props;
         if (this.input.value) {
             history.push({
-                pathname: `/user`,
-                search: `login=${this.input.value}`
+                pathname: `/user/`+this.input.value,
+                // search: this.input.value
             });
         }
     }

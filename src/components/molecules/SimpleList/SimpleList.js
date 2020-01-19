@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 const ListContainer = styled.ul`
     background-color: #fff;
@@ -26,6 +26,7 @@ const ListItem = styled.li`
     padding: 15px 20px;
     overflow: hidden;
     border-top: 1px solid #e5e5e5;
+    cursor:pointer;
     &:hover {
         background: #e1e4e8;
         -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
@@ -65,7 +66,17 @@ const UserNameContainer = styled.span`
 //     { login: 'usuario 6', avatar_url: 'https://image.flaticon.com/icons/svg/179/179323.svg' },
 // ];
 
-export default class SimpleList extends Component {
+
+class SimpleList extends Component {
+
+    UserClick(login) {
+        let { history } = this.props;
+        console.log(login);
+        history.push({
+            pathname: `/user/`+login,
+            // search: login
+        });
+    }
     render() {
         console.log();
         return (
@@ -73,16 +84,16 @@ export default class SimpleList extends Component {
                 {
                     this.props.users.map((user, i) => {
                         return (
-                            <Link to="/user" key={i}>
-                                <ListItem >
-                                    <ImageContainer>
-                                        <ImageUser src={user.avatar_url} alt="user" />
-                                    </ImageContainer>
-                                    <UserNameContainer>
-                                        {user.login}
-                                    </UserNameContainer>
-                                </ListItem>
-                            </Link>
+
+                            <ListItem key={i} onClick={() => this.UserClick(user.login)}>
+                                <ImageContainer>
+                                    <ImageUser src={user.avatar_url} alt="user" />
+                                </ImageContainer>
+                                <UserNameContainer>
+                                    {user.login}
+                                </UserNameContainer>
+                            </ListItem>
+
                         )
                     })
                 }
@@ -90,3 +101,5 @@ export default class SimpleList extends Component {
         );
     }
 }
+
+export default withRouter(SimpleList);

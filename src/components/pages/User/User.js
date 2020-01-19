@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import { Container } from '../../atoms/Grid/Grid';
 import Card from '../../atoms/Card/Card';
 
-export default class Home extends React.Component {
+
+
+export default class User extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -14,7 +16,9 @@ export default class Home extends React.Component {
       <Fragment>
         
         <Card title="brodrigues1990">
-          Usuario
+          
+
+          
         </Card>
         
       </Fragment>
