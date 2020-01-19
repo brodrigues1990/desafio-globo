@@ -5,7 +5,7 @@ import './global.css';
 import { BrowserRouter, Switch, Route, Link, useRouteMatch } from 'react-router-dom'
 import { Container } from './components/atoms/Grid/Grid';
 import Header from './components/organisms/Header/Header';
-import UserDetail from './components/pages/UserDetail/UserDetail';
+import User from './components/pages/User/User';
 import Error404 from './components/pages/Error404/Error404';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -54,7 +54,7 @@ ReactDOM.render(
             <ContainerButttonBack><ButtonBack /></ContainerButttonBack>
                 <Switch>
                     <Route path="/" exact={true} component={App} />
-                    <Route path="/user" component={UserDetail} />
+                    <Route path="/user/:username" component={User} />
                     <Route path='*' component={Error404} />
                 </Switch>
             </ BrowserRouter>
