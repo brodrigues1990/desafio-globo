@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Header from '../../organisms/Header/Header';
 import styled from 'styled-components';
 import { Container } from '../../atoms/Grid/Grid';
-import Card from '../../atoms/Card/Card';
+import Card from '../../molecules/Card/Card';
 import { api } from '../../../services/githubAPI';
 import axios from 'axios';
 
