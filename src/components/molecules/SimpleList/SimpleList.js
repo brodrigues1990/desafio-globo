@@ -54,24 +54,24 @@ const UserNameContainer = styled.span`
 
 `
 
-const Users = [
-    { login: 'usuario 1', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
-    { login: 'usuario 2', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
-    { login: 'usuario 3', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
-    { login: 'usuario 4', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
-    { login: 'usuario 5', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
-    { login: 'usuario 6', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
-    { login: 'usuario 7', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
-    { login: 'usuario 6', avatar_url: 'https://image.flaticon.com/icons/svg/179/179323.svg' },
-
-];
+// const Users = [
+//     { login: 'usuario 1', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
+//     { login: 'usuario 2', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
+//     { login: 'usuario 3', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
+//     { login: 'usuario 4', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
+//     { login: 'usuario 5', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
+//     { login: 'usuario 6', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
+//     { login: 'usuario 7', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
+//     { login: 'usuario 6', avatar_url: 'https://image.flaticon.com/icons/svg/179/179323.svg' },
+// ];
 
 export default class SimpleList extends Component {
     render() {
+        console.log();
         return (
             <React.Fragment>
                 {
-                    Users.map((user, i) => {
+                    this.props.users.map((user, i) => {
                         return (
                             <Link to="/user" key={i}>
                                 <ListItem >
@@ -86,8 +86,6 @@ export default class SimpleList extends Component {
                         )
                     })
                 }
-
-
             </React.Fragment>
         );
     }
