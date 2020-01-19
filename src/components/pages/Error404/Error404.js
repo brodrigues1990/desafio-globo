@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Card from '../../atoms/Card/Card';
+import Card from '../../molecules/Card/Card';
 import { useLocation } from "react-router-dom";
 
 function NoMatch() {
