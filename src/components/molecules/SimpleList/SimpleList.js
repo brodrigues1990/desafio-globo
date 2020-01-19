@@ -23,7 +23,7 @@ const ListItem = styled.li`
     position: relative;
     align-items: center;
     justify-content: flex-start;
-    padding: 15px 20px;
+    padding: 15px 35px;
     overflow: hidden;
     border-top: 1px solid #e5e5e5;
     cursor:pointer;
@@ -41,18 +41,17 @@ const ListItem = styled.li`
 const ImageContainer = styled.span`
     margin-left: 0;
     margin-right: 16px;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
 `
 const ImageUser = styled.img`
     width: 100%;
-    height: 50px;
 `
 const UserNameContainer = styled.span`
     font-size: 21px;
     color: #465A65;
-
+    font-weight: 300;
 `
 
 // const Users = [
@@ -71,14 +70,14 @@ class SimpleList extends Component {
 
     UserClick(login) {
         let { history } = this.props;
-        console.log(login);
+        
         history.push({
             pathname: `/user/`+login,
             // search: login
         });
     }
     render() {
-        console.log();
+        
         return (
             <React.Fragment>
                 {

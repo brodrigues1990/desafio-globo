@@ -9,14 +9,14 @@ const SearchForm = styled.div`
 `
 const SearchInput = styled.input`
     margin: 0;
-    padding: 15px 70px 15px 20px;
+    padding: 15px 70px 15px 35px;
     width: 100%;
     border: 0;
     font-size: 20px;
     font-weight: 300;
 `
 const SearchButton = styled.div`
-    padding: 15px 20px 15px 20px;
+    padding: 20px 25px;
     cursor:pointer;
     color:#465A65;
     &:hover {

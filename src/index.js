@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './global.css';
-import { BrowserRouter, Switch, Route, Link, useRouteMatch } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, useHistory , useRouteMatch } from 'react-router-dom'
 import { Container } from './components/atoms/Grid/Grid';
 import Header from './components/organisms/Header/Header';
 import User from './components/pages/User/User';
@@ -13,7 +13,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 export const ContainerButttonBack = styled.section`
     width:100%;
-    height: 35px;
+    height: 50px;
 `
 export const ButttonBack = styled.button`
     background: none;
@@ -21,24 +21,26 @@ export const ButttonBack = styled.button`
     border: 0;
     margin: 0;
     color: #465A65;
-    height: 35px;
+    height: 50px;
     cursor: pointer;
 `
 export const TextButtonBack = styled.span`
     padding-left: 5px;
+    font-weight: 600;
 `
 
 function ButtonBack() {
     let match = useRouteMatch("/");
+    let history = useHistory();
     if (!match.isExact) {
         return (
             
-            <Link to="/"  >
-                <ButttonBack>
+            
+                <ButttonBack onClick={() => history.goBack()}>
                         <FontAwesomeIcon icon={faArrowLeft} size="lg"/>  
                         <TextButtonBack>Voltar</TextButtonBack>
                 </ButttonBack>
-            </Link>
+            
             
         )
     } else {

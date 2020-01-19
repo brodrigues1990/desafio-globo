@@ -7,7 +7,7 @@ function NoMatch() {
   return (
     <div>
       <h3>
-      Nenhum resultado para <code>{location.pathname}</code>
+        Nenhum resultado para <code>{location.pathname}</code>
       </h3>
     </div>
   );
@@ -18,13 +18,12 @@ export default class Home extends React.Component {
     super(props);
   }
 
-  render () {
+  render() {
     return (
       <Fragment>
-
-            <Card title="Error">
-              <NoMatch/>
-            </Card>
+        <Card title="Error">
+          <NoMatch />
+        </Card>
       </Fragment>
     );
   }

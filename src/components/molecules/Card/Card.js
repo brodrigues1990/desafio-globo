@@ -18,7 +18,7 @@ const CardTitle = styled.h3 `
     line-height: 32px;
     font-size: 25px;
     font-weight: 300;
-    padding: 15px 20px;
+    padding: 15px 35px;
     background: #f5f5f5;
 `
 const CardContent = styled.div `

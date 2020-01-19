@@ -31,7 +31,7 @@ export default class Header extends Component {
         <Container>
           <Row>
             <Column>
-            <a target="_blank" href="https://github.com/brodrigues1990/desafio-globo"><Image src={logo} alt="Desafio Globo Github API" /></a>
+              <a target="_blank" href="https://github.com/brodrigues1990/desafio-globo"><Image src={logo} alt="Desafio Globo Github API" /></a>
             </Column>
           </Row>
         </Container>
