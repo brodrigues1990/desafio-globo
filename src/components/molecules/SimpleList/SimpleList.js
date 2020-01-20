@@ -2,29 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link, withRouter } from 'react-router-dom'
 
-const ListContainer = styled.ul`
-    background-color: #fff;
-    border: 1px solid #e5e5e5;
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-weight: 400;
-    letter-spacing: .009375em;
-    text-decoration: inherit;
-    text-transform: inherit;
-    line-height: 1.5rem;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    color: rgba(0,0,0,.87);
-    transform: translateY(-100%);
-    transition: transform .3s cubic-bezier(.4,0,.6,1),opacity 0s .3s;
-    box-shadow: 0 2px 4px rgba(0,0,0,.5);
-    z-index: 4;
-    opacity: 1;
-    transform: translateY(0);
-    transition: transform .3s cubic-bezier(.4,0,.2,1) .3s,opacity 0s .3s;
-`
-const ListItem = styled.li`
+export const ListItem = styled.li`
     display: flex;
     position: relative;
     align-items: center;
@@ -44,7 +22,7 @@ const ListItem = styled.li`
     }
 `
 
-const ImageContainer = styled.span`
+export const ImageContainer = styled.span`
     margin-left: 0;
     margin-right: 16px;
     width: 60px;
@@ -76,14 +54,14 @@ class SimpleList extends Component {
 
     UserClick(login) {
         let { history } = this.props;
-        
+
         history.push({
-            pathname: `/user/`+login,
+            pathname: `/user/` + login,
             // search: login
         });
     }
     render() {
-        
+
         return (
             <React.Fragment>
                 {

@@ -12,7 +12,7 @@ export const Container = styled.div`
           padding: 0 5% ;
      }
      @media only screen and (min-width: 1000px) {
-          padding: 0 10% ;
+          padding: 0 15% ;
      }
 `
 

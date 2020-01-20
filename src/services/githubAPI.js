@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+//client_id e client_secret seriam para fazer a autenticacao na API e gerar a TOKEN
+//mas nao entrara no MVP por causa do prazo. :(
 export const api = {
     baseUrl: "https://api.github.com",
-    client_id: "c83a49f801e6291e9ee1",
-    client_secret: "7ccae496ed4d3fb835f3f9b4d4da6064cad3f1c3"
+    // client_id: "c83a49f801e6291e9ee1",
+    // client_secret: "7ccae496ed4d3fb835f3f9b4d4da6064cad3f1c3"
 }
-console.log('entrou');
 
+//Tentativa de criar uma metodo utilizando hooks para reaproveitamento de codigo e melhor organizacao
+//porem como tive erros que nao consegui resolver acabei repetindo codigo para poder entregar o MVP a tempo.
 // export const useGetApi = (urn, params) => {
 //     const [data, setData] = useState([]);
 

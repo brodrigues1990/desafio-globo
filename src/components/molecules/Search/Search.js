@@ -34,43 +34,54 @@ const SearchButton = styled.div`
 class Search extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            search: ''
+        }
     }
 
     handleInputRef = (input) => {
         this.input = input;
     };
 
+    //metodo que busca o usuario e envia para tela de detalhe
     SearchUserClick = () => {
         let { history } = this.props;
         axios.get(api.baseUrl + "/users/" + this.input.value)
-        .then(res => {
-            if (this.input.value) {
-                history.push({
-                    pathname: `/user/`+this.input.value,
-                    // search: this.input.value
-                });
-            }
-        }).catch(function (error) {
-            switch (error.response.status) {
-              case 404 :
-                  alert("nao encontrado");
-                  //props.history.push('/503') //we will redirect user into 503 page 
-                  break
-              default :
-                  console.log(error);
-                  break
-          }
-        })
-
-        
+            .then(res => {
+                if (this.input.value) {
+                    history.push({
+                        pathname: `/user/` + this.input.value,
+                        // search: this.input.value
+                    });
+                }
+            }).catch(function (error) {
+                switch (error.response.status) {
+                    case 404:
+                        alert("nao encontrado");
+                        //props.history.push('/503') //we will redirect user into 503 page 
+                        break
+                    default:
+                        console.log(error);
+                        break
+                }
+            })
     }
+
+    //metodo para manipular a tecla enter do teclado
+    handleKeyPress = (target) => {
+        if (target.key === "Enter") {
+            this.setState({ search: this.input.value });
+            this.SearchUserClick(this.state.search);
+        }
+
+    }
+
 
     render() {
         return (
-
             <SearchForm onSubmit={this._handleSubmit}>
-                <SearchInput type="text" name="user" ref={this.handleInputRef} placeholder="Buscar usuário" />
-                <SearchButton onClick={this.SearchUserClick.bind(this)}><FontAwesomeIcon icon={faSearch} size="lg" /></SearchButton>
+                <SearchInput type="text" name="user" ref={this.handleInputRef} placeholder="Buscar usuário" onKeyPress={this.handleKeyPress} />
+                <SearchButton onClick={this.SearchUserClick.bind(this)} ><FontAwesomeIcon icon={faSearch} size="lg" /></SearchButton>
             </SearchForm>
         );
     }
