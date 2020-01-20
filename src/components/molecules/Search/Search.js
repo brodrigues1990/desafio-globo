@@ -5,6 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { withRouter } from 'react-router-dom';
 import githubAPI, { api } from '../../../services/githubAPI';
 import axios from 'axios';
+import {ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toasts';
 
 const SearchForm = styled.div`
     display: flex;
@@ -57,7 +58,8 @@ class Search extends React.Component {
             }).catch(function (error) {
                 switch (error.response.status) {
                     case 404:
-                        alert("nao encontrado");
+                        //alert("nao encontrado");
+                        ToastsStore.error("Usuário não encontrado !")
                         //props.history.push('/503') //we will redirect user into 503 page 
                         break
                     default:
@@ -82,6 +84,7 @@ class Search extends React.Component {
             <SearchForm onSubmit={this._handleSubmit}>
                 <SearchInput type="text" name="user" ref={this.handleInputRef} placeholder="Buscar usuário" onKeyPress={this.handleKeyPress} />
                 <SearchButton onClick={this.SearchUserClick.bind(this)} ><FontAwesomeIcon icon={faSearch} size="lg" /></SearchButton>
+                <ToastsContainer store={ToastsStore} position={ToastsContainerPosition.TOP_LEFT} lightBackground/>
             </SearchForm>
         );
     }
