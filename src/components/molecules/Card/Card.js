@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Card = styled.div `
+const Card = styled.div`
     width:100%;
     background-color: #FFF;
     top: 0;
@@ -13,25 +13,32 @@ const Card = styled.div `
     transform: translateY(0);
     transition: transform .3s cubic-bezier(.4,0,.2,1) .3s,opacity 0s .3s;
 `
-const CardTitle = styled.h3 `
+const CardTitle = styled.h3`
     display: block;
     line-height: 32px;
     font-size: 25px;
     font-weight: 300;
-    padding: 15px 35px;
+    padding: 15px 0;
     background: #f5f5f5;
 `
-const CardContent = styled.div `
+
+export const CardContainer = styled.div`
+    padding: 0 35px;
+`
+
+const CardContent = styled.div`
     margin: 0 0 25px 0;
 `
 
 export default props => (
-  
-      <Card>
-        <CardTitle>{props.title}</CardTitle>
-        <CardContent>         
+
+    <Card>
+        <CardTitle>
+            <CardContainer>{props.title}</CardContainer>
+        </CardTitle>
+        <CardContent>
             {props.children}
         </CardContent>
-      </Card>
-    
+    </Card>
+
 )

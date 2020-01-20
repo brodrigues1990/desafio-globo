@@ -16,7 +16,13 @@ const ListContainer = styled.ul`
     padding: 0;
     list-style-type: none;
     color: rgba(0,0,0,.87);
-    color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
+    transform: translateY(-100%);
+    transition: transform .3s cubic-bezier(.4,0,.6,1),opacity 0s .3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,.5);
+    z-index: 4;
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform .3s cubic-bezier(.4,0,.2,1) .3s,opacity 0s .3s;
 `
 const ListItem = styled.li`
     display: flex;

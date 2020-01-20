@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { withRouter } from 'react-router-dom';
+import githubAPI, { api } from '../../../services/githubAPI';
+import axios from 'axios';
 
 const SearchForm = styled.div`
     display: flex;
@@ -39,14 +41,28 @@ class Search extends React.Component {
     };
 
     SearchUserClick = () => {
-
         let { history } = this.props;
-        if (this.input.value) {
-            history.push({
-                pathname: `/user/`+this.input.value,
-                // search: this.input.value
-            });
-        }
+        axios.get(api.baseUrl + "/users/" + this.input.value)
+        .then(res => {
+            if (this.input.value) {
+                history.push({
+                    pathname: `/user/`+this.input.value,
+                    // search: this.input.value
+                });
+            }
+        }).catch(function (error) {
+            switch (error.response.status) {
+              case 404 :
+                  alert("nao encontrado");
+                  //props.history.push('/503') //we will redirect user into 503 page 
+                  break
+              default :
+                  console.log(error);
+                  break
+          }
+        })
+
+        
     }
 
     render() {

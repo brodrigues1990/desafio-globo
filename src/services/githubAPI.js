@@ -8,23 +8,44 @@ export const api = {
 }
 console.log('entrou');
 
-const useGetApi = (urn, params) => {
-    const [data, setData] = useState([]);
+// export const useGetApi = (urn, params) => {
+//     const [data, setData] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await axios.get(api.baseUrl + `${urn}` + params ? `/${params}` : null);
+//     useEffect(() => {
+//         const fetchData = async () => {
+//             const response = await axios.get(api.baseUrl + `${urn}` + params ? `/${params}` : null);
+//             const data = [...response.data];
+//             const error = response.error;
+//             if (error)
+//                 console.log(`Error: ${error}`)
+//             else {
+//                 console.log(data);
+//                 setData(data);
+//             }
+//         };
+//         fetchData();
+//     }, [urn, params])
+
+//     return data;
+// }
+
+const useGetApi = (url,params)=>{
+    const [data,setData] = useState([]);
+
+    useEffect(()=>{
+        const fetchData = async ()=>{
+            const response = await axios.get(`${url}/${params}`);
             const data = [...response.data];
             const error = response.error;
-            if (error)
+            if(error)
                 console.log(`Error: ${error}`)
-            else {
+            else{
                 console.log(data);
-                setData(data);
+                setData(data);  
             }
         };
         fetchData();
-    }, [urn, params])
+    },[url,params])
 
     return data;
 }

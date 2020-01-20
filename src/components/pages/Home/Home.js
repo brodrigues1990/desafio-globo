@@ -12,12 +12,13 @@ export default class Home extends React.Component {
       usersList: []
     }
   }
-  componentDidMount() {
+  componentDidMount() {    
     axios.get(api.baseUrl+"/users")
       .then(res => {
         console.log(res.data);
         this.setState({ usersList: res.data });
       })
+      
   }
 
   render () {
