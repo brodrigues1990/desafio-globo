@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Container, Row, Column } from '../../atoms/Grid/Grid';
-import Text from '../../atoms/Text/Text';
+import { Container, Row, Column } from '../atoms/Grid';
+import Text from '../atoms/Text';
 
 const FooterContainer = styled.footer`
     width:100%;

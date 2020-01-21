@@ -105,12 +105,12 @@ const StyledText = styled(typeText)`
 })}
 `
 
-
 //Component Core
 const Text = (props) => (
     <StyledText {...props}>{props.children}</StyledText>
 );
 
+//Propriedades comum default
 Text.defaultProps = {
     fontFamily: 'Roboto',
     fontColor: '#465A65'

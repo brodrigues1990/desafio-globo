@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
-import Header from '../../organisms/Header/Header';
+import Header from '../organisms/Header';
 import styled from 'styled-components';
-import { Row, Column } from '../../atoms/Grid/Grid';
-import Card from '../../molecules/Card/Card';
-import useGetApi, { api } from '../../../services/githubAPI';
+import { Row, Column } from '../atoms/Grid';
+import Card from '../molecules/Card';
+import useGetApi, { api } from '../../api/githubAPI';
 import axios from 'axios';
-import { ListItem } from '../../molecules/SimpleList/SimpleList';
+import { ListItem } from '../molecules/SimpleList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import Text from '../../atoms/Text/Text';
+import Text from '../atoms/Text';
 
 const ImageUser = styled.img`
      width: 100%;
@@ -97,12 +97,12 @@ export default class User extends React.Component {
               <ColumnUserInfo>
                 <ContainerText><Text fontSize="26px">{this.state.userInfo.name}</Text></ContainerText>
                 <ContainerText><Text fontSize="15px"><FontAwesomeIcon icon={faMapMarkerAlt} size="lg" /></Text><Text margin="0 0 0 5px">{this.state.userInfo.location}</Text></ContainerText>
-                <ContainerText><Text fontSize="17px">{this.state.userInfo.bio}</Text></ContainerText>
+                <ContainerText><Text fontSize="17px" fontWeight="300">{this.state.userInfo.bio}</Text></ContainerText>
               </ColumnUserInfo>
             </Row>
           </Container>
         </Card>
-        
+
         <Card title="Repositórios">
           <Container>
             <div><Text size="small">Tamanho total:&nbsp;</Text><Text size="medium" fontWeight="400">{this.state.repoTotalSize}</Text><Text>&nbsp;Bytes</Text></div>

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const Container = styled.div`
    display: block;
    max-width: 1360px;
@@ -16,7 +15,6 @@ export const Container = styled.div`
           padding: 0 15% ;
      }
 `
-
 export const Row = styled.div`
    display: flex;
    flex-direction: row;
@@ -29,7 +27,6 @@ export const Row = styled.div`
           flex-direction: row;
      }
 `
-
 export const Column = styled.div`
    flex: 1;
    min-height: 1px;

@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Card from '../../molecules/Card/Card';
+import Card from '../molecules/Card';
 import { useLocation } from "react-router-dom";
 
 function NoMatch() {
@@ -13,7 +13,7 @@ function NoMatch() {
   );
 }
 
-export default class Home extends React.Component {
+export default class Error404 extends React.Component {
   constructor(props) {
     super(props);
   }

@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './global.css';
 import { BrowserRouter, Switch, Route, useHistory , useRouteMatch } from 'react-router-dom'
-import { Container } from './components/atoms/Grid/Grid';
-import Header from './components/organisms/Header/Header';
-import Footer from './components/organisms/Footer/Footer';
-import User from './components/pages/User/User';
-import Error404 from './components/pages/Error404/Error404';
+import { Container } from './components/atoms/Grid';
+import Header from './components/organisms/Header';
+import Footer from './components/organisms/Footer';
+import User from './components/pages/User';
+import Error404 from './components/pages/Error404';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
