@@ -5,6 +5,7 @@ import './global.css';
 import { BrowserRouter, Switch, Route, useHistory , useRouteMatch } from 'react-router-dom'
 import { Container } from './components/atoms/Grid/Grid';
 import Header from './components/organisms/Header/Header';
+import Footer from './components/organisms/Footer/Footer';
 import User from './components/pages/User/User';
 import Error404 from './components/pages/Error404/Error404';
 import styled from 'styled-components';
@@ -50,7 +51,7 @@ function ButtonBack() {
 
 ReactDOM.render(
     <Fragment>
-        <Header></Header>
+        <Header/>
         <Container>
             <BrowserRouter>
             <ContainerButttonBack><ButtonBack /></ContainerButttonBack>
@@ -61,6 +62,7 @@ ReactDOM.render(
                 </Switch>
             </ BrowserRouter>
         </Container>
+        <Footer/>
     </Fragment>
 
     , document.getElementById('root'));

@@ -83,11 +83,11 @@ export default class User extends React.Component {
 
         //Criar variavel pegando todas linguagens 
         let allLanguages = res.data.map(e => e.language).join(",");
-        Object.values(allLanguages);
-        console.log(allLanguages);
+        //Object.values(allLanguages);
+        console.log(JSON.stringify(allLanguages));
         //allLanguages.filter(allLanguages)
-        const unique = [...new Set(allLanguages)];
-        console.log(unique);
+        // const unique = [...new Set(allLanguages)];
+        // console.log(unique);
 
         //Cria variavel fazendo a soma de todas as issuees abertas
         let totalIssues = res.data.reduce((total, valor) => total + valor.open_issues_count, 0);
