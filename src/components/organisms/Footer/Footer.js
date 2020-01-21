@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Container, Row, Column } from '../../atoms/Grid/Grid';
+import Text from '../../atoms/Text/Text';
 
 const FooterContainer = styled.footer`
     width:100%;
@@ -8,12 +9,6 @@ const FooterContainer = styled.footer`
     background-color: none;
     text-align: center;
     bottom:0;
-    font-size: 12px;
-`
-const TextDeveloperName = styled.span`
-    font-family: 'Caveat', cursive; 
-    font-size: 17px;
-    color: #00AEEF;
 `
 const LinkDeveloper = styled.a`
     color: #465A65;
@@ -27,7 +22,9 @@ export default class Header extends Component {
                 <Container>
                     <Row>
                         <Column>
-                            <LinkDeveloper target="_blank" href="https://github.com/brodrigues1990">Desenvolvido por <TextDeveloperName>Bruno Rodrigues</TextDeveloperName></LinkDeveloper>
+                            <LinkDeveloper target="_blank" href="https://github.com/brodrigues1990">
+                                <Text fontSize="12px">Desenvolvido por </Text><Text fontColor="#00AEEF" fontSize="17px" fontFamily="'Caveat', cursive">Bruno Rodrigues</Text>
+                            </LinkDeveloper>
                         </Column>
                     </Row>
                 </Container>

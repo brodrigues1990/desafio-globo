@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link, withRouter } from 'react-router-dom'
+import Text from '../../atoms/Text/Text';
 
 export const ListItem = styled.li`
     display: flex;
@@ -21,7 +22,6 @@ export const ListItem = styled.li`
         box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
     }
 `
-
 export const ImageContainer = styled.span`
     margin-left: 0;
     margin-right: 16px;
@@ -32,23 +32,6 @@ export const ImageContainer = styled.span`
 const ImageUser = styled.img`
     width: 100%;
 `
-const UserNameContainer = styled.span`
-    font-size: 21px;
-    color: #465A65;
-    font-weight: 300;
-`
-
-// const Users = [
-//     { login: 'usuario 1', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
-//     { login: 'usuario 2', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
-//     { login: 'usuario 3', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
-//     { login: 'usuario 4', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
-//     { login: 'usuario 5', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
-//     { login: 'usuario 6', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
-//     { login: 'usuario 7', avatar_url: 'https://avatars0.githubusercontent.com/u/8028407?s=460&v=4' },
-//     { login: 'usuario 6', avatar_url: 'https://image.flaticon.com/icons/svg/179/179323.svg' },
-// ];
-
 
 class SimpleList extends Component {
 
@@ -67,16 +50,14 @@ class SimpleList extends Component {
                 {
                     this.props.users.map((user, i) => {
                         return (
-
                             <ListItem key={i} onClick={() => this.UserClick(user.login)}>
                                 <ImageContainer>
                                     <ImageUser src={user.avatar_url} alt="user" />
                                 </ImageContainer>
-                                <UserNameContainer>
+                                <Text color="#465A65" fontSize="21px" fontWeight="300">
                                     {user.login}
-                                </UserNameContainer>
+                                </Text>
                             </ListItem>
-
                         )
                     })
                 }
