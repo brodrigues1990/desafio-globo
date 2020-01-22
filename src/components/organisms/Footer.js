@@ -22,8 +22,8 @@ export default class Header extends Component {
                 <Container>
                     <Row>
                         <Column>
-                            <LinkDeveloper target="_blank" href="https://github.com/brodrigues1990">
-                                <Text fontSize="12px">Desenvolvido por </Text><Text fontColor="#00AEEF" fontSize="17px" fontFamily="'Caveat', cursive">Bruno Rodrigues</Text>
+                            <LinkDeveloper target="_blank" rel="author" href="https://github.com/brodrigues1990">
+                                <Text fontSize="12px">Desenvolvido por </Text><Text color="#00AEEF" fontSize="17px" fontFamily="'Caveat', cursive">Bruno Rodrigues</Text>
                             </LinkDeveloper>
                         </Column>
                     </Row>

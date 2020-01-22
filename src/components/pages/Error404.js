@@ -1,14 +1,20 @@
-import React, { Component, Fragment } from 'react';
-import Card from '../molecules/Card';
+import React, { Fragment } from 'react';
+import Card, {CardContainer} from '../molecules/Card';
 import { useLocation } from "react-router-dom";
+import styled from 'styled-components';
+import Text from '../atoms/Text';
+
+const ErrorContainer = styled.footer`
+    padding:25px 35px;
+`
 
 function NoMatch() {
   let location = useLocation();
   return (
     <div>
-      <h3>
+      <Text>
         Nenhum resultado para <code>{location.pathname}</code>
-      </h3>
+      </Text>
     </div>
   );
 }
@@ -21,8 +27,10 @@ export default class Error404 extends React.Component {
   render() {
     return (
       <Fragment>
-        <Card title="Error">
-          <NoMatch />
+        <Card title="Erro 404">
+          <ErrorContainer>
+            <NoMatch />
+          </ErrorContainer>
         </Card>
       </Fragment>
     );

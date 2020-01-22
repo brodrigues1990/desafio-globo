@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { withRouter } from 'react-router-dom';
-import githubAPI, { api } from '../../api/githubAPI';
+import { api } from '../../api/githubAPI';
 import axios from 'axios';
 import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts';
 

@@ -1,9 +1,8 @@
 import React, { Fragment } from 'react';
-import Header from '../organisms/Header';
 import styled from 'styled-components';
 import { Row, Column } from '../atoms/Grid';
 import Card from '../molecules/Card';
-import useGetApi, { api } from '../../api/githubAPI';
+import { api } from '../../api/githubAPI';
 import axios from 'axios';
 import { ListItem } from '../molecules/SimpleList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

@@ -18,35 +18,25 @@ const typeText = props => {
         case 'h6':
             return <h6 {...props}>{props.children}</h6>
         case 'span':
-            return <span {...props}>{props.children}</span>
-            break
+            return <span {...props}>{props.children}</span>           
         case 'strong':
-            return <strong {...props}>{props.children}</strong>
-            break
+            return <strong {...props}>{props.children}</strong>  
         case 'abbr':
-            return <abbr {...props}>{props.children}</abbr>
-            break
+            return <abbr {...props}>{props.children}</abbr>           
         case 'legend':
-            return <legend {...props}>{props.children}</legend>
-            break
+            return <legend {...props}>{props.children}</legend>           
         case 'small':
-            return <small {...props}>{props.children}</small>
-            break
+            return <small {...props}>{props.children}</small>           
         case 'sub':
-            return <sub {...props}>{props.children}</sub>
-            break
+            return <sub {...props}>{props.children}</sub>            
         case 'sup':
-            return <sup {...props}>{props.children}</sup>
-            break
+            return <sup {...props}>{props.children}</sup>         
         case 'label':
-            return <label {...props}>{props.children}</label>
-            break
+            return <label {...props}>{props.children}</label>           
         case 'p':
-            return <p {...props}>{props.children}</p>
-            break
+            return <p {...props}>{props.children}</p>          
         default:
             return <span {...props}>{props.children}</span>
-            break
     }
 }
 
@@ -54,7 +44,7 @@ const StyledText = styled(typeText)`
     font-family: ${prop('fontFamily')};
     font-weight:  ${ifProp('fontWeight', prop('fontWeight'))}; 
     font-size: ${ifProp('fontSize', prop('fontSize'))};
-    color: ${ifProp('fontColor', prop('fontColor'))};
+    color: ${ifProp('color', prop('color'))};
     margin: ${prop('margin')}; 
     padding: ${prop('padding')};   
     text-align:${ifProp('align', prop('align'))};
@@ -113,7 +103,7 @@ const Text = (props) => (
 //Propriedades comum default
 Text.defaultProps = {
     fontFamily: 'Roboto',
-    fontColor: '#465A65'
+    color: '#465A65'
 }
 
 export { Text }
