@@ -12,8 +12,8 @@ import Text from '../atoms/Text';
 const ImageUser = styled.img`
      width: 100%;
      max-width: 250px;
-}
 `
+
 const Container = styled.div`
   padding: 25px 35px 15px 35px;
 `
@@ -58,7 +58,6 @@ export default class User extends React.Component {
 
     axios.get(api.baseUrl + "/users/" + this.state.userLogin)
       .then(res => {
-        // console.log(res.data);
         this.setState({ userInfo: res.data });
       })
     axios.get(api.baseUrl + "/users/" + this.state.userLogin + "/repos")
@@ -73,9 +72,6 @@ export default class User extends React.Component {
         let allLanguages = res.data.map(e => e.language).join(",");
         //Object.values(allLanguages);
         console.log(JSON.stringify(allLanguages));
-        //allLanguages.filter(allLanguages)
-        // const unique = [...new Set(allLanguages)];
-        // console.log(unique);
 
         //Cria variavel fazendo a soma de todas as issuees abertas
         let totalIssues = res.data.reduce((total, valor) => total + valor.open_issues_count, 0);
@@ -96,7 +92,7 @@ export default class User extends React.Component {
               <ColumnUserInfo>
                 <ContainerText><Text fontSize="26px">{this.state.userInfo.name}</Text></ContainerText>
                 <ContainerText><Text fontSize="15px"><FontAwesomeIcon icon={faMapMarkerAlt} size="lg" /></Text><Text margin="0 0 0 5px">{this.state.userInfo.location}</Text></ContainerText>
-                <ContainerText><Text fontSize="17px" fontWeight="300">{this.state.userInfo.bio}</Text></ContainerText>
+                <ContainerText><Text fontSize="17px" fontWeight="300">{this.state.userInfo. }</Text></ContainerText>
               </ColumnUserInfo>
             </Row>
           </Container>

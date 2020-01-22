@@ -19,9 +19,16 @@ const HeaderContainer = styled.header`
     text-align: center;
 `
 const Image = styled.img`
-    padding: 10px;
-    height: 70px;
+    margin-top: 7px;
+    height: 55px;
     background-color: none;
+    border-radius: 50px;
+    transition: box-shadow 0.5s;
+    -webkit-transition: width 0.5s;
+    &:hover {
+      box-shadow: 0 2px 4px rgba(0,0,0,.5);
+    }
+    
 `
 
 export default class Header extends Component {
