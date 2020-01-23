@@ -16,6 +16,7 @@ O projeto faz uso do padrão de arquitetura Atomic Design e styled-components pa
 ## Padrões e Libs utilizadas 
 
 * material-design - padrão de arquitetura de layout.
+
 https://material.io/design/introduction/
 
 * atomic-design - padrão de arquitetura de componentes.
