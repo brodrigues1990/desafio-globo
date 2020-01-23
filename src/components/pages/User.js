@@ -34,8 +34,23 @@ const ListRepos = styled(ListItem)`
   -ms-flex-align: center;
   align-items: start;
 `
-
 const ContainerText = styled.div`
+    margin-bottom: 15px;
+`
+const ChipsLanguages = styled.div`
+    display: inline-block;
+    height: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.6);
+    line-height: 32px;
+    padding: 0 12px;
+    border-radius: 16px;
+    background-color: #e4e4e4;
+    margin-bottom: 5px;
+    margin-right: 5px;
+`
+const ConTextReposStats = styled.div`
     margin-bottom: 15px;
 `
 
@@ -105,19 +120,21 @@ export default class User extends React.Component {
 
         <Card title="Repositórios">
           <Container>
-            <div><Text size="small">Tamanho total:&nbsp;</Text><Text size="medium" fontWeight="400">{this.state.repoTotalSize}</Text><Text>&nbsp;Bytes</Text></div>
-            <div><Text size="small">Issues abertos:&nbsp;</Text><Text size="medium" fontWeight="400">{this.state.repoTotalIssues} </Text></div>
-            <div><Text size="small">Linguagens:&nbsp;</Text>
+            <ConTextReposStats><Text size="small">Tamanho total:&nbsp;</Text><Text size="medium" fontWeight="400">{this.state.repoTotalSize}</Text><Text>&nbsp;Bytes</Text></ConTextReposStats>
+            <ConTextReposStats><Text size="small">Issues abertos:&nbsp;</Text><Text size="medium" fontWeight="400">{this.state.repoTotalIssues} </Text></ConTextReposStats>
+            <ConTextReposStats><Text size="small">Linguagens:&nbsp;</Text>
               {
                 this.state.languages.map((language, i) => {
                   if (language) {
                     return (
-                      <Text size="small" fontWeight="300">{language} </Text>
+                      <ChipsLanguages>
+                        <Text size="small" fontWeight="300">{language} </Text>
+                      </ChipsLanguages>
                     )
                   }
                 })
               }
-            </div>
+            </ConTextReposStats>
           </Container>
           {
             this.state.userRepos.map((repos, i) => {
