@@ -122,13 +122,13 @@ export default class User extends React.Component {
           <Container>
             <ConTextReposStats><Text size="small">Tamanho total:&nbsp;</Text><Text size="medium" fontWeight="400">{this.state.repoTotalSize}</Text><Text>&nbsp;Bytes</Text></ConTextReposStats>
             <ConTextReposStats><Text size="small">Issues abertos:&nbsp;</Text><Text size="medium" fontWeight="400">{this.state.repoTotalIssues} </Text></ConTextReposStats>
-            <ConTextReposStats><Text size="small">Linguagens:&nbsp;</Text>
+            <ConTextReposStats><Text size="small">Linguagens:&nbsp;</Text >
               {
                 this.state.languages.map((language, i) => {
                   if (language) {
                     return (
                       <ChipsLanguages>
-                        <Text size="small" fontWeight="300">{language} </Text>
+                        <Text size="small" fontWeight="400">{language} </Text>
                       </ChipsLanguages>
                     )
                   }

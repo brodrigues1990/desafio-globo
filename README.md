@@ -54,3 +54,4 @@ Para rodar, execute o comando abaixo dentro do diretorio do projeto:
 ## Telas
 
 ![ScreenShot](https://github.com/brodrigues1990/desafio-globo/blob/master/art/users.png?raw=true)
+![ScreenShot](https://github.com/brodrigues1990/desafio-globo/blob/master/art/user.png?raw=true)
