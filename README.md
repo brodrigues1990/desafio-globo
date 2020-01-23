@@ -15,6 +15,9 @@ O projeto faz uso do padrão de arquitetura Atomic Design e styled-components pa
 
 ## Padrões e Libs utilizadas 
 
+* material-design - padrão de arquitetura de layout.
+https://material.io/design/introduction/
+
 * atomic-design - padrão de arquitetura de componentes.
 
 https://bradfrost.com/blog/post/atomic-web-design/
@@ -54,4 +57,6 @@ Para rodar, execute o comando abaixo dentro do diretorio do projeto:
 ## Telas
 
 ![ScreenShot](https://github.com/brodrigues1990/desafio-globo/blob/master/art/users.png?raw=true)
+
+
 ![ScreenShot](https://github.com/brodrigues1990/desafio-globo/blob/master/art/user.png?raw=true)
