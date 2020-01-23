@@ -24,7 +24,7 @@ const CardContent = styled.div`
 export default props => (
     <Card>
         <CardContainer>
-            <Text fontSize="25px" fontWeight="300">
+            <Text fontSize="25px" fontWeight="400">
                 {props.title}
             </Text>
         </CardContainer>

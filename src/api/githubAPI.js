@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
 //client_id e client_secret seriam para fazer a autenticacao na API e gerar a TOKEN
 //mas nao entrara no MVP por causa do prazo. :(
 export const api = {
-    baseUrl: "https://api.github.com",
+    baseUrl: "https://api.github.com/users",
     // client_id: "c83a49f801e6291e9ee1",
     // client_secret: "7ccae496ed4d3fb835f3f9b4d4da6064cad3f1c3"
 }
@@ -32,26 +32,18 @@ export const api = {
 //     return data;
 // }
 
-const useGetApi = (url,params)=>{
-    const [data,setData] = useState([]);
+const getUsers = () => {
+   
 
-    useEffect(()=>{
-        const fetchData = async ()=>{
-            const response = await axios.get(`${url}/${params}`);
-            const data = [...response.data];
-            const error = response.error;
-            if(error)
-                console.log(`Error: ${error}`)
-            else{
-                console.log(data);
-                setData(data);  
-            }
-        };
-        fetchData();
-    },[url,params])
-
-    return data;
+    axios.get(api.baseUrl)
+        .then(res => {
+            console.log(res);
+            return res;
+            // setUsers({ usersList: [res.data] });
+        }).catch(function (error) {
+            console.log(`Error: ${error}`)
+        })
+        
 }
 
-
-export default useGetApi;
+export default getUsers;

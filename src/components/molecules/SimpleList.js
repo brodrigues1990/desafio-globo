@@ -42,11 +42,10 @@ class SimpleList extends Component {
 
         history.push({
             pathname: `/user/` + login,
-            // search: login
         });
     }
     render() {
-
+        console.log(this.props);
         return (
             <React.Fragment>
                 {

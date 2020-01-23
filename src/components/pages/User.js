@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { Row, Column } from '../atoms/Grid';
 import Card from '../molecules/Card';
-import { api } from '../../api/githubAPI';
+import useGetApi, { api } from '../../api/githubAPI';
 import axios from 'axios';
 import { ListItem } from '../molecules/SimpleList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -48,30 +48,37 @@ export default class User extends React.Component {
       userInfo: [],
       repoTotalSize: 0,
       repoTotalIssues: 0,
-      UserRepos: []
+      languages: [],
+      userRepos: []
     }
   }
 
   componentDidMount() {
-    // const users = useGetApi('user', this.state.userLogin);
-    // console.log(users);
+    const users = useGetApi(this.state.userLogin);
+    console.log(users);
 
-    axios.get(api.baseUrl + "/users/" + this.state.userLogin)
+    axios.get(api.baseUrl + `/${this.state.userLogin}`)
       .then(res => {
         this.setState({ userInfo: res.data });
       })
-    axios.get(api.baseUrl + "/users/" + this.state.userLogin + "/repos")
+    axios.get(api.baseUrl + `/${this.state.userLogin}` + "/repos")
       .then(res => {
-        this.setState({ UserRepos: res.data });
+        this.setState({ userRepos: res.data });
 
         //Cria variavel fazendo a soma de todos os tamanhos de repositorios em bytes
         let totalSize = res.data.reduce((total, valor) => total + valor.size, 0);
         this.setState({ repoTotalSize: totalSize });
 
+
         //Criar variavel pegando todas linguagens 
-        let allLanguages = res.data.map(e => e.language).join(",");
-        //Object.values(allLanguages);
-        console.log(JSON.stringify(allLanguages));
+        // let allLanguages = res.data.map(e => e.language).join(",");
+        let lgs = res.data.reduce((l, i) => {
+          if (l.indexOf(i.language) === -1) { l.push(i.language); }
+          return l;
+        }, []);
+        this.setState({ languages: lgs });
+        console.log(lgs);
+
 
         //Cria variavel fazendo a soma de todas as issuees abertas
         let totalIssues = res.data.reduce((total, valor) => total + valor.open_issues_count, 0);
@@ -92,7 +99,7 @@ export default class User extends React.Component {
               <ColumnUserInfo>
                 <ContainerText><Text fontSize="26px">{this.state.userInfo.name}</Text></ContainerText>
                 <ContainerText><Text fontSize="15px"><FontAwesomeIcon icon={faMapMarkerAlt} size="lg" /></Text><Text margin="0 0 0 5px">{this.state.userInfo.location}</Text></ContainerText>
-                <ContainerText><Text fontSize="17px" fontWeight="300">{this.state.userInfo. }</Text></ContainerText>
+                <ContainerText><Text fontSize="17px" fontWeight="300">{this.state.userInfo.bio}</Text></ContainerText>
               </ColumnUserInfo>
             </Row>
           </Container>
@@ -102,10 +109,20 @@ export default class User extends React.Component {
           <Container>
             <div><Text size="small">Tamanho total:&nbsp;</Text><Text size="medium" fontWeight="400">{this.state.repoTotalSize}</Text><Text>&nbsp;Bytes</Text></div>
             <div><Text size="small">Issues abertos:&nbsp;</Text><Text size="medium" fontWeight="400">{this.state.repoTotalIssues} </Text></div>
-            <div><Text size="small">Linguagens:&nbsp;</Text><Text size="medium" fontWeight="400"></Text></div>
+            <div><Text size="small">Linguagens:&nbsp;</Text>
+              {
+                this.state.languages.map((language, i) => {
+                  if (language) {
+                    return (
+                      <Text size="small" fontWeight="300">{language} </Text>
+                    )
+                  }
+                })
+              }
+            </div>
           </Container>
           {
-            this.state.UserRepos.map((repos, i) => {
+            this.state.userRepos.map((repos, i) => {
               return (
                 <ListRepos key={i} >
                   <div><Text size="large">{repos.name}</Text></div>

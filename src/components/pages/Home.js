@@ -14,15 +14,13 @@ export default class Home extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(api.baseUrl + "/users")
+    axios.get(api.baseUrl)
       .then(res => {
-        console.log(res.data);
         this.setState({ usersList: res.data });
       })
   }
 
   render() {
-    console.log(this.state.usersList);
     return (
       <Fragment>
         <Card title="Usuários">

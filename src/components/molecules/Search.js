@@ -35,7 +35,7 @@ const SearchButton = styled.div`
 class Search extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.setState = {
             search: ''
         }
     }
@@ -47,7 +47,7 @@ class Search extends React.Component {
     //metodo que busca o usuario e envia para tela de detalhe
     SearchUserClick = () => {
         let { history } = this.props;
-        axios.get(api.baseUrl + "/users/" + this.input.value)
+        axios.get(api.baseUrl + `/${this.input.value}`)
             .then(res => {
                 if (this.input.value) {
                     history.push({
