@@ -1,6 +1,6 @@
 # Desafio Globo
-Projeto desafio que tem por objetivo consumir a API Rest do GitHub exibindo detalhes do usuario e seus repositorios.
-O projeto faz uso do padrão de arquitetura Atomic Design, e styled-components para estilização. 
+Projeto desafio que tem por objetivo consumir a API Rest do GitHub exibindo detalhes do usuário e seus repositórios.
+O projeto faz uso do padrão de arquitetura Atomic Design e styled-components para estilização. 
 
 
 ## O app objetiva-se
@@ -20,7 +20,7 @@ O projeto faz uso do padrão de arquitetura Atomic Design, e styled-components p
 https://bradfrost.com/blog/post/atomic-web-design/
 
 
-* styled-components - biblioteca para criacao de componentes estilizados.
+* styled-components - biblioteca para criação  de componentes estilizados.
 
 https://www.npmjs.com/package/styled-components
 

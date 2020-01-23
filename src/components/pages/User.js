@@ -54,8 +54,6 @@ export default class User extends React.Component {
   }
 
   componentDidMount() {
-    const users = useGetApi(this.state.userLogin);
-    console.log(users);
 
     axios.get(api.baseUrl + `/${this.state.userLogin}`)
       .then(res => {
