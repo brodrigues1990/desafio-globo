@@ -35,7 +35,7 @@ const SearchButton = styled.div`
 class Search extends React.Component {
     constructor(props) {
         super(props);
-        this.setState = {
+        this.state = {
             search: ''
         }
     }
