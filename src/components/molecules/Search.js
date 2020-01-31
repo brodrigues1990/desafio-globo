@@ -9,6 +9,7 @@ import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toa
 
 const SearchForm = styled.div`
     display: flex;
+    border-bottom: 1px solid #e5e5e5;
 `
 const SearchInput = styled.input`
     margin: 0;
