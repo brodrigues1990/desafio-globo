@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { Container, Row, Column } from '../atoms/Grid';
-import logo from '../../assets/Images/logo-github.png';
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import { Container, Row, Column } from '../atoms/Grid'
+import logo from '../../assets/Images/logo-github.png'
 
 const HeaderContainer = styled.header`
     width:100%;

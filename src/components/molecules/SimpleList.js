@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, { Component } from 'react'
+import styled from 'styled-components'
 import { withRouter } from 'react-router-dom'
-import Text from '../atoms/Text';
+import Text from '../atoms/Text'
 
 export const ListItem = styled.li`
     display: flex;
