@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { api } from '../../services/githubAPI'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { withRouter } from 'react-router-dom'
-import { api } from '../../services/githubAPI'
-import axios from 'axios'
+
 import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts'
 
 const SearchForm = styled.div`
@@ -48,7 +48,7 @@ class Search extends React.Component {
     //metodo que busca o usuario e envia para tela de detalhe
     SearchUserClick = () => {
         let { history } = this.props;
-        axios.get(api.baseUrl + `/${this.input.value}`)
+        api.get(`users/${this.input.value}`)
             .then(res => {
                 if (this.input.value) {
                     history.push({
