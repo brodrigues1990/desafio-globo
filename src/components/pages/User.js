@@ -1,9 +1,8 @@
-import React, { Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Row, Column } from '../atoms/Grid';
 import Card from '../molecules/Card';
-import useGetApi, { api } from '../../api/githubAPI';
-import axios from 'axios';
+import { api } from '../../services/githubAPI';
 import { ListItem } from '../molecules/SimpleList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
@@ -12,8 +11,8 @@ import Text from '../atoms/Text';
 const ImageUser = styled.img`
      width: 100%;
      max-width: 250px;
+     border-radius: 4px;
 `
-
 const Container = styled.div`
   padding: 25px 35px 15px 35px;
 `
@@ -33,6 +32,7 @@ const ListRepos = styled(ListItem)`
   -webkit-box-align: start;
   -ms-flex-align: center;
   align-items: start;
+  
 `
 const ContainerText = styled.div`
     margin-bottom: 15px;
@@ -70,11 +70,11 @@ export default class User extends React.Component {
 
   componentDidMount() {
 
-    axios.get(api.baseUrl + `/${this.state.userLogin}`)
+    api.get(`users/${this.state.userLogin}`)
       .then(res => {
         this.setState({ userInfo: res.data });
       })
-    axios.get(api.baseUrl + `/${this.state.userLogin}` + "/repos")
+      api.get(`users/${this.state.userLogin}/repos`)
       .then(res => {
         this.setState({ userRepos: res.data });
 
@@ -101,7 +101,7 @@ export default class User extends React.Component {
 
   render() {
     return (
-      <Fragment>
+      <>
 
         <Card title={this.state.userLogin}>
           <Container>
@@ -151,7 +151,7 @@ export default class User extends React.Component {
           }
         </Card>
 
-      </Fragment>
+      </>
     );
   }
 

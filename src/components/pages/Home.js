@@ -1,38 +1,34 @@
-import React, { Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import Loading from '../atoms/loader';
 import Card from '../molecules/Card';
 import SimpleList from '../molecules/SimpleList';
 import Search from '../molecules/Search';
-import { api } from '../../api/githubAPI';
-import axios from 'axios';
+import { api } from '../../services/githubAPI';
 
-export default class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      usersList: [],
-      loading: true
-    }
-  }
+export default function Home() {
 
-  componentDidMount() {
-    axios.get(api.baseUrl)
+  const [usersList, setUsersList] = useState([])
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    api.get("users")
       .then(res => {
-        this.setState({ usersList: res.data, loading: false });
+        // this.setState({ usersList: res.data, loading: false });
+        setUsersList(res.data);
+        setLoading(false);
       })
-  }
+  }, []);
 
-  render() {
-    const { loading } = this.state;
+  
     return (
-      <Fragment>
+      <>
         <Card title="Usuários">
           <Search />
-          {loading ? <Loading /> : <SimpleList users={this.state.usersList} />}
+          {loading ? <Loading /> : <SimpleList users={usersList} />}
         </Card>
-      </Fragment>
+      </>
     );
-  }
+  
 
 }
 
