@@ -19,6 +19,7 @@ ReactDOM.render(
                 <ButtonBack />
                 <Switch>
                     <Route path="/" exact={true} component={Home} />
+                    <Route path="/desafio-globo" component={Home} />
                     <Route path="/user/:username" component={User} />
                     <Route path='*' component={Error404} />
                 </Switch>
