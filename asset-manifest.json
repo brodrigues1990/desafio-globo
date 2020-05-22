@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/desafio-globo/static/css/main.04bc1773.chunk.css",
-    "main.js": "/desafio-globo/static/js/main.a535d6b8.chunk.js",
-    "main.js.map": "/desafio-globo/static/js/main.a535d6b8.chunk.js.map",
+    "main.js": "/desafio-globo/static/js/main.bd2d2e13.chunk.js",
+    "main.js.map": "/desafio-globo/static/js/main.bd2d2e13.chunk.js.map",
     "runtime-main.js": "/desafio-globo/static/js/runtime-main.686cd6fe.js",
     "runtime-main.js.map": "/desafio-globo/static/js/runtime-main.686cd6fe.js.map",
     "static/js/2.71af5dec.chunk.js": "/desafio-globo/static/js/2.71af5dec.chunk.js",
     "static/js/2.71af5dec.chunk.js.map": "/desafio-globo/static/js/2.71af5dec.chunk.js.map",
     "index.html": "/desafio-globo/index.html",
-    "precache-manifest.d55bc474fd3c799fa5e5ed224ed9fa57.js": "/desafio-globo/precache-manifest.d55bc474fd3c799fa5e5ed224ed9fa57.js",
+    "precache-manifest.a2eb34b71be7aca9af435e28f5d3036e.js": "/desafio-globo/precache-manifest.a2eb34b71be7aca9af435e28f5d3036e.js",
     "service-worker.js": "/desafio-globo/service-worker.js",
     "static/css/main.04bc1773.chunk.css.map": "/desafio-globo/static/css/main.04bc1773.chunk.css.map",
     "static/js/2.71af5dec.chunk.js.LICENSE": "/desafio-globo/static/js/2.71af5dec.chunk.js.LICENSE",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.686cd6fe.js",
     "static/js/2.71af5dec.chunk.js",
     "static/css/main.04bc1773.chunk.css",
-    "static/js/main.a535d6b8.chunk.js"
+    "static/js/main.bd2d2e13.chunk.js"
   ]
 }

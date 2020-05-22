@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/desafio-globo/precache-manifest.d55bc474fd3c799fa5e5ed224ed9fa57.js"
+  "/desafio-globo/precache-manifest.a2eb34b71be7aca9af435e28f5d3036e.js"
 );
 
 self.addEventListener('message', (event) => {
